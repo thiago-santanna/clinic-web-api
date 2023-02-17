@@ -31,8 +31,24 @@ public class Medico {
     public Medico(DadosCadastroMedico dados) {
         System.out.println(this.nome = dados.nome());
         this.crm = dados.crm();
+        this.telefone = dados.telefone();
         this.email = dados.email();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
+        if (dados.nome() != null){
+            this.nome = dados.nome();
+        }
+
+        if (dados.telefone() != null){
+            this.telefone = dados.telefone();
+        }
+
+        if (dados.dadosEndereco() != null){
+            this.endereco.atualizarInformacoes(dados.dadosEndereco());
+        }
+
     }
 }
